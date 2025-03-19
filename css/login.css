@@ -7,6 +7,9 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background: linear-gradient(45deg, #002e4e, #004e92);
+    animation: bg-animation 5s infinite alternate;
+    z-index: -1;
 }
 .login-container {
     background: #fff;
