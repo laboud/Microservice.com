@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;700&display=swap");
 
 * {
   margin: 0;
@@ -7,28 +7,33 @@
 }
 
 body {
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
   color: white;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
 }
 
 .animated-bg {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, #002e4e, #004e92);
+  height: 100vh;
+  background: linear-gradient(45deg, #111, #222);
   animation: bg-animation 5s infinite alternate;
   z-index: -1;
 }
 
 @keyframes bg-animation {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(45deg); }
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(45deg);
+  }
 }
 
 .content {
@@ -68,9 +73,6 @@ body {
 .buttons a:hover {
   background-color: #3cef0abe;
 }
-
-
-
 
 .info-section {
   text-align: center;
@@ -127,7 +129,6 @@ body {
   transform: scale(1.1);
   background: rgba(255, 255, 255, 0.2);
 }
-
 
 @media (max-width: 768px) {
   .features {
