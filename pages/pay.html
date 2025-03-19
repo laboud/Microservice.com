@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pay.css">
     <title>PAY</title>
 </head>
 <body>
@@ -27,16 +28,19 @@
        <textarea name="d" id="d" cols="30" rows="10">Talk about yourself</textarea>
        </div>
        <div> 
-        <label >your project</label>
-        <input type="file" id="c"name="c" >
-       </div>
+        <div> 
+          <label for="c">Your project:</label>
+          <input type="file" id="c" name="c" accept=".zip,.rar,.pdf,.docx, png,">
+         </div>
+  
        <div>
         <label >the price</label>
         <input type="number" id="j" name="j " placeholder="$">
        </div>
        <div>
-        <input type="submit" value="go">
+        <input type="submit" value="go" onclick="">
        </div>
     </form>
+    <script src="../js.js"></script>
 </body>
 </html>
