@@ -8,11 +8,13 @@
     <title>PAY</title>
 </head>
 <body>
-    <form action=""method="php">
+    <form method="post" action='https://api.web3forms.com/submit'>
        <div>
+         
          <label>username</label>
          <input type="text" id="a" name="a" placeholder="choise your username" >
        </div>
+       <input type="hidden" name="access_key" value="3e56d442-f997-42d4-9188-637ad69ca8d9">
        <div>
         <label >email:</label>
         <input type="email" id="g" name="g" placeholder="@gmail.com">
@@ -29,17 +31,20 @@
        <textarea name="d" id="d" cols="30" rows="10">Talk about yourself</textarea>
        </div>
        <div> 
-        <div> 
-          <label for="c">Your project:</label>
-          <input type="file" id="c" name="c" accept=".zip,.rar,.pdf,.docx, png,">
-         </div>
+        <form id="uploadForm" >
+          <label for="fileInput">Your project:</label>
+          <input type="file" id="fileInput" name="file">
+          <input type="button" onclick="uploadFile()" >
+      </form>
+      <p id="downloadLink"></p>
+      
   
-       <div>
-        <label >the price</label>
-        <input type="number" id="j" name="j " placeholder="$">
-       </div>
-       <div>
-        <input type="submit" value="go" onclick="">
+         <div> 
+          <label >the price</label>
+          <input type="number" id="j" name="j" placeholder="$"> 
+      </div>
+       <div> 		
+			<input type="submit" value="Submit" id="submit">
        </div>
     </form>
     <script src="../js.js"></script>
