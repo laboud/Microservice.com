@@ -18,7 +18,7 @@
     </style>
 </head>
 <body>
-    <form method="post" action="https://formsubmit.co/your-email@gmail.com" enctype="multipart/form-data">
+    <form method="post" action="https://formsubmit.co/yespro2019@gmail.com" enctype="multipart/form-data">
         <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
         <input type="hidden" name="_captcha" value="false">
         
@@ -72,7 +72,7 @@
             let files = fileInput.files;
             let loader = document.getElementById("loader");
             
-            errorMessage.textContent = ""; // مسح أي رسالة خطأ سابقة
+            errorMessage.textContent = ""; 
 
             if (files.length === 0) {
                 event.preventDefault();
@@ -97,7 +97,7 @@
               
                 if (file.size > 2000000) {
                     event.preventDefault();
-                    errorMessage.textContent = "Image size must be less than 1MB.";
+                    errorMessage.textContent = "Image size must be less than 2MB.";
                     return;
                 }
             }
