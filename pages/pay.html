@@ -6,47 +6,104 @@
     <link rel="stylesheet" href="../css/pay.css">
     <link rel="icon" href="../img/Capture d'écran 2025-03-20 001448.icon.png">
     <title>PAY</title>
+    <style>
+        #loader {
+            display: none;
+            font-size: 18px;
+            color: blue;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-    <form method="post" action='https://api.web3forms.com/submit'>
-       <div>
-         
-         <label>username</label>
-         <input type="text" id="a" name="a" placeholder="choise your username" >
-       </div>
-       <input type="hidden" name="access_key" value="3e56d442-f997-42d4-9188-637ad69ca8d9">
-       <div>
-        <label >email:</label>
-        <input type="email" id="g" name="g" placeholder="@gmail.com">
-       </div>
-       <div>
-        <label >Options:</label>
-       <select name="b" id="b">  
-        <option >Design & Writing</option>
-        <option >Programs Pienlabs</option>
-        <option >Progant Manners</option>
-        <option>Merio Pendates</option></select>
-       </div>
-       <div>
-       <textarea name="d" id="d" cols="30" rows="10">Talk about yourself</textarea>
-       </div>
-       <div> 
-        <form id="uploadForm" >
-          <label for="fileInput">Your project:</label>
-          <input type="file" id="fileInput" name="file">
-          <input type="button" onclick="uploadFile()" >
-      </form>
-      <p id="downloadLink"></p>
-      
-  
-         <div> 
-          <label >the price</label>
-          <input type="number" id="j" name="j" placeholder="$"> 
-      </div>
-       <div> 		
-			<input type="submit" value="Submit" id="submit">
-       </div>
+    <form method="post" action="https://formsubmit.co/your-email@gmail.com" enctype="multipart/form-data">
+        <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <div>
+            <label>Username:</label>
+            <input type="text" name="Username" placeholder="Choose your username" required>
+        </div>
+
+        <div>
+            <label>Email:</label>
+            <input type="email" name="Email" placeholder="@gmail.com" required>
+        </div>
+
+        <div>
+            <label>Options:</label>
+            <select name="Service">
+                <option>Design & Writing</option>
+                <option>Programs Pienlabs</option>
+                <option>Progant Manners</option>
+                <option>Merio Pendates</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Talk about yourself:</label>
+            <textarea name="Message" cols="30" rows="5">Talk about yourself</textarea>
+        </div>
+
+        <div>
+            <label>Your project (Max 2 images - PNG, JPG, JPEG):</label>
+            <input type="file" id="fileInput" name="attachments" accept="image/png, image/jpeg, image/jpg" multiple required>
+            <p id="error-message" style="color: red;"></p>
+        </div>
+
+        <div>
+            <label>The price:</label>
+            <input type="number" name="Price" placeholder="$" required>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit">
+        </div>
+
+        <div id="loader">Sending...</div>
     </form>
-    <script src="../js.js"></script>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function (event) {
+            let fileInput = document.getElementById("fileInput");
+            let errorMessage = document.getElementById("error-message");
+            let files = fileInput.files;
+            let loader = document.getElementById("loader");
+            
+            errorMessage.textContent = ""; // مسح أي رسالة خطأ سابقة
+
+            if (files.length === 0) {
+                event.preventDefault();
+                errorMessage.textContent = "Please upload at least one image.";
+                return;
+            }
+
+            if (files.length > 2) {
+                event.preventDefault();
+                errorMessage.textContent = "You can only upload a maximum of 2 images.";
+                return;
+            }
+
+            for (let file of files) {
+                let fileType = file.type;
+                if (!fileType.startsWith("image/")) {
+                    event.preventDefault();
+                    errorMessage.textContent = "Only images (PNG, JPG, JPEG) are allowed.";
+                    return;
+                }
+
+              
+                if (file.size > 2000000) {
+                    event.preventDefault();
+                    errorMessage.textContent = "Image size must be less than 1MB.";
+                    return;
+                }
+            }
+
+            loader.style.display = "block";
+        });
+    </script>
 </body>
 </html>
