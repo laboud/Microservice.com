@@ -49,7 +49,7 @@
 
         <div>
             <label>Your project (Max 2 images - PNG, JPG, JPEG):</label>
-            <input type="file" id="fileInput" name="attachments" accept="image/png, image/jpeg, image/jpg" multiple required>
+            <input type="file" id="fileInput" name="attachments" accept="image/png, image/jpeg, image/jpg" multiple  required>
             <p id="error-message" style="color: red;"></p>
         </div>
 
@@ -66,7 +66,7 @@
     </form>
 
     <script>
-        document.querySelector("form").addEventListener("submit", function (event) {
+        document.querySelector("form").addEventListener("submit", async function  (event) {
             let fileInput = document.getElementById("fileInput");
             let errorMessage = document.getElementById("error-message");
             let files = fileInput.files;
