@@ -17,18 +17,18 @@
     <title>Microservice</title>
   </head>
   <body>
-
     <header>
       <div class="logo">Microservice</div>
       <nav>
         <ul>
           <a href="../index.html"> <li>about us</li></a>
           <a href="#Categories"> <li>Categories</li></a>
-          <li>Design</li>
+         <a href="#Design"><li>Design</li></a> 
           <li>Programs</li>
           <li>Administrative</li>
-          <li>Submit jobs</li>
-          <a href="#"><li>Help</li></a>
+      <a href="#"><li>Submit jobs</li></a>   
+      <a href=""id="helpButton"><li>Help</li></a> 
+      
 
           <li><a href="pages/login.html" class="start-btn">login</a></li>
         </ul>
@@ -44,7 +44,7 @@
               <a href="">Categories</a>
             </li>
             <li>
-              <a href="">Design</a>
+              <a href="" >Design</a>
             </li>
             <li>
               <a href="">Programs</a>
@@ -60,9 +60,27 @@
             </li>
           </ul>
         </div>
-       
+      
       </div>
     </header>
+    
+    <div id="modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>مرحبًا بك في الموقع! </h2>
+          <p>   هل لديك مشكلة نحن نعتذر عن ذلك.؟ </p>
+          <ul>
+              <li>يمكن التواصل معنا.</li>
+              <li>: whatsapp or instagram     .</li>
+          </ul>
+          <p>للمزيد من المعلومات،  <a href="https://microservices.io" target="_blank">  Microservices</a>.</p>
+          <div class="fc-i">
+            <a href=""><i class="fab fa-whatsapp" style="color: green;"></i></a>
+            <a href=""><i class="fab fa-instagram" style="color : rgb(234, 78, 104);"></i></a>    
+</div>
+        </div>
+
+  </div>
     <section class="hero">
       <h1>Microservice</h1>
       <p>
@@ -82,8 +100,8 @@
         <span class="tag">Sale!</span>
       </div>
 
-      <div class="cards-grid">
-        <div class="card">
+      <div class="cards-grid" >
+        <div class="card" id="#Design">
           <h3>Design & Writing</h3>
           <p>نص تعريفي قصير عن هذه الفئة من الخدمات.</p>
           <div class="card-footer">
@@ -142,6 +160,28 @@
     });
 
 }
+document.addEventListener("DOMContentLoaded", function() {
+    var modal = document.getElementById("modal");
+    var helpButton = document.getElementById("helpButton");
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    helpButton.onclick = function(event) {
+        event.preventDefault(); 
+        modal.style.display = "flex";
+    };
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+});
+
     </script>
+
   </body>
 </html>

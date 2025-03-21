@@ -1,118 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.css">
-    <link rel="stylesheet" href="../css/pay.css">
     <link rel="icon" href="../img/Capture d'écran 2025-03-20 001448.icon.png">
-    <title>middle</title>
+    <title>طرق الدفع</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            width: 80%;
-            max-width: 800px;
-            text-align: center;
-        }
-        .card {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    text-align: center;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+.card {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    transform-style: preserve-3d;
+    width: 300px;
+    text-align: center;
 }
 
 .card:hover {
-    transform: scale(1.05) translateZ(10px);
+    transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-        .card img {
-            width: 50px;
-            height: 50px;
-        }
-        .card button {
-            margin-top: 10px;
-            padding: 8px 15px;
-            border: none;
-            background-color: #1e26ff;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        .card button:hover {
-            background-color: #65ed0be2;
-        }
+.card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    background-color: #1e26ff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.card button:hover {
+    background-color: #0ba360;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 80%;
+    }
+}
+
+.fc-i {
+    position: fixed;
+    bottom: 0;
+   
+
+    padding: 15px 0;
+    text-align: center;
+}
+
+
+ a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #0ba360;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+ a:hover {
+    background-color: #087d4b;
+    transform: scale(1.1);
+}
+
+a i {
+    font-size: 1.5rem;
+}
+
     </style>
 </head>
 <body>
     <section>
         <div class="container">
-            <div class="card">
+            <div class="card" onclick="handlePayment('Digipost')">
                 <img src="../img/téléchargement (1).png" alt="Digipost">
                 <p>Digipost</p>
-                <button onclick="handlePayment('Digipost')">ادفع الآن</button>
+                <button>ادفع الآن</button>
             </div>
-            <div class="card">
+            <div class="card" onclick="handlePayment('Binance')">
                 <img src="../img/téléchargement.png" alt="Binance">
                 <p>Binance</p>
-                <button onclick="handlePayment('Binance')">ادفع الآن</button>
+                <button>ادفع الآن</button>
             </div>
-            <div class="card">
+            <div class="card" onclick="handlePayment('Flousi')">
                 <img src="../img/Capture d'écran 2025-03-19 223624.png" alt="Flousi">
                 <p>Flousi</p>
-                <button onclick="handlePayment('Flousi')">ادفع الآن</button>
+                <button>ادفع الآن</button>
             </div>
-            <div class="card">
+            <div class="card" onclick="handlePayment('Ooredoo')">
                 <img src="../img/téléchargement (2).png" alt="Ooredoo">
                 <p>Ooredoo</p>
-                <button onclick="handlePayment('Ooredoo')">ادفع الآن</button>
+                <button>ادفع الآن</button>
             </div>
-            <div class="card">
+            <div class="card" onclick="handlePayment('Orange')">
                 <img src="../img/Orange_logo.svg.png" alt="Orange">
                 <p>Orange</p>
-                <button onclick="handlePayment('Orange')">ادفع الآن</button>
+                <button>ادفع الآن</button>
             </div>
-            <div class="card">
+            <div class="card" onclick="handlePayment('Paypal')">
                 <img src="../img/pup.png" alt="Paypal">
                 <p>Paypal</p>
-                <button onclick="handlePayment('Paypal')">ادفع الآن</button>
+                <button>ادفع الآن</button>
             </div>
         </div>
     </section>
-    
+<div class="fc-i">
+            <a href=""><i class="fab fa-whatsapp"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>    
+</div>
     <script>
         function handlePayment(service) {
-      
-    let paymentUrls = {
-        "Digipost": "https://www.facebook.com/groups/1073643024414683",
-        "Binance": "https://www.facebook.com/groups/1073643024414683",
-        "Flousi": "https://www.facebook.com/groups/1073643024414683",
-        "Ooredoo": "https://www.facebook.com/groups/1073643024414683",
-        "Orange": "https://www.facebook.com/groups/1073643024414683",
-       
-    };
+            let paymentUrls = {
+                "Digipost": "https://www.facebook.com/groups/1073643024414683",
+                "Binance": "https://www.facebook.com/groups/1073643024414683",
+                "Flousi": "https://www.facebook.com/groups/1073643024414683",
+                "Ooredoo": "https://www.facebook.com/groups/1073643024414683",
+                "Orange": "https://www.facebook.com/groups/1073643024414683",
+            };
 
-    if (paymentUrls[service]) {
-        alert('تم اختيار وسيلة الدفع: ' + service + '\nجاري توجيهك إلى صفحة الدفع...');
-        window.location.href = paymentUrls[service]; 
-    } else {
-        alert("عذرًا، لا يوجد رابط متاح لهذه الخدمة.");
-    }
-}
+            if (paymentUrls[service]) {
+                alert(`✅ تم اختيار وسيلة الدفع: ${service} \n🔄 جاري توجيهك إلى صفحة الدفع...`);
+                setTimeout(() => {
+                    window.location.href = paymentUrls[service];
+                }, 1500);
+            } else {
+                alert("❌ عذرًا، لا يوجد رابط متاح لهذه الخدمة.");
+            }
+        }
     </script>
 </body>
 </html>
