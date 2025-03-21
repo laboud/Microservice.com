@@ -107,6 +107,7 @@ img, video {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: none;
 }
 
 .co-menu button:hover {
@@ -321,4 +322,10 @@ footer {
 footer p {
   color: #666;
   font-size: 0.9rem;
+}
+@media (max-width:1024px) {
+  .co-menu button {
+    display: block;
+
+  }
 }
