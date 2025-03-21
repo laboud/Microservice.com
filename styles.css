@@ -78,11 +78,11 @@ img, video {
 .menu-icon {
   display: none;
 }
-
+}
 @media screen and (max-width: 768px) {
   .menu-icon {
       display: block; 
-      cursor: pointer;
+      cursor : pointer;
   }
 
   nav ul {
@@ -93,9 +93,66 @@ img, video {
   nav ul.active {
       display: flex; 
   }
-}
 
 }
+.co-menu {
+  position: relative;
+}
+
+.co-menu button {
+  background-color: #0974f8;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.co-menu button:hover {
+  background-color: #555;
+}
+
+.co-menu .box-menu {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 250px;
+  height: 100vh; 
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(250px);
+  transition: transform 0.3s ease;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2); 
+  z-index: 1000; 
+}
+
+.co-menu .box-menu.active {
+  transform: translateX(0);
+}
+
+.co-menu .box-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.co-menu .box-menu ul li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd; 
+}
+
+.co-menu .box-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.co-menu .box-menu ul li a:hover {
+  color: #007bff; 
+}
+
 
 .start-btn {
   background-color: #4C8EFF;
@@ -104,6 +161,7 @@ img, video {
   border-radius: 6px;
   font-weight: 500;
   transition: background-color 0.3s;
+  
 }
 
 .start-btn:hover {
